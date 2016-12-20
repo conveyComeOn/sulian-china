@@ -1,21 +1,66 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.play-bg {
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	
 }
+.main{
+display: flex;
+flex-direction: column;
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
 }
+.reverse{
 
-.userinfo-nickname {
-  color: #aaa;
+   margin: 0 auto;
+   margin-top: 70px;
+
+   width: 130px;
+    height: 130px;
+    border-radius: 100px;
+    background: rgba(255,255,255,.15);
+    color: #fff;
+    
+
 }
+.reverse-btn{
+    text-align: center;
+    line-height: 120px;
+    font-size: 20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    margin-top: 5px;
+    margin-left: 5px;
+    background-color: #ff4d4d;
 
-.usermotto {
-  margin-top: 200px;
+}
+.line{
+    background: #C5A77E;
+    height: 1px;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  margin-top: 100rpx;
+
+
+}
+.roll{
+        margin: 0 auto;
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    border:1px solid  rgba(255,255,255,.15);
+}
+.menu ul li{
+ float: left;
+ width: 33.33%;
+text-align: center;
+margin-top: 20px;
+}
+.menu ul li text{
+    margin-top: 10px;
 }
