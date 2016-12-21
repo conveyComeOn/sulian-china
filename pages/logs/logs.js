@@ -3,7 +3,8 @@
 Page({
   data: {
     logs: [],
-    nighttime:1
+    nighttime:1,
+    reducecolor:"black"
   },
   onLoad: function () {
     this.setData({
@@ -14,12 +15,28 @@ Page({
 
     })
   },bindreduce:function(){
+    if(this.data.nighttime>0){
+this.data.nighttime--;
+if(this.data.nighttime==0){
+  this.setData({
+    reducecolor:"grey"
+  })
+
+}
 
     this.setData({
-        
+        nighttime:this.data.nighttime
     })
+    } 
  
   },bindplus:function(){
-
+this.data.nighttime++;
+if(this.data.nighttime>0){
+this.setData({
+      reducecolor:"black",
+        nighttime:this.data.nighttime
+    })
+}
+    
   }
 })

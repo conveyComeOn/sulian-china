@@ -22,37 +22,52 @@ background-color: rgb(255, 255, 255);
 }
  .height{
   line-height: 500%;
-   background-color: skyblue;
+
  }
 .near-hotel{
   height: 20%;
+     border-bottom: 1px solid gainsboro;
    
  
 }
+.near-hotel text,.region text{
+  padding-left: 30rpx;
+}
 .address{
   height: 20%;
+     border-bottom: 1px solid gainsboro;
 
 }
 .time{
   height: 20%;
+   border-bottom: 1px solid gainsboro;
 
 }
+.time text{
+color: gray;
+font-size: 25rpx;
+
+  line-height: 100%;
+  padding:5rpx;
+}
 .live-time{
+  height: 20%;
   
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 30rpx;
-  
+  padding: 20rpx;
+   border-bottom: 1px solid gainsboro;
 }
 
 .live-time .reduce,.live-time .plus{
-
+margin: auto 0;
   line-height: 100rpx;
   height: 100rpx;
   width:100rpx;
   border-radius: 100rpx;
-  border:1px solid #000000;
+    border: 1px solid black;
+ 
   
 }
 
@@ -64,5 +79,13 @@ background-color: rgb(255, 255, 255);
 }
 .middle .middle-day,.middle .middle-night{
 line-height: 150%;
+  
+}
+.region{
+    height: 20%;
+  color: gray;
+ 
+  line-height: 350%;
+ 
   
 }
