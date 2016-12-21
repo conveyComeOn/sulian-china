@@ -4,53 +4,53 @@
   <image src="../../images/bg.png" mode="aspectFill" class="play-bg"></image>
   <view class="main">
       <view class="reverse">
-        <view class="reverse-btn">预订酒店</view>
+        <view class="reverse-btn" bindtap="gethouse">预订酒店</view>
       </view>
       <view class="line"></view>
       <view class="menu">
       <ul>
           <navigator url="url">
-            <li><view class="roll"><image src="src"> </image>
-              
+            <li><view class="roll">
+              <view class="icon alarmclock"></view>
                 </view>
-               <text>时租房</text>
+               <view class="txt">时租房</view>
             </li>
             </navigator>
 
           
           <navigator url="url">
-            <li><view class="roll"><image src="src"> </image>
-              
+            <li><view class="roll">
+              <view class="icon pen"></view>
                 </view>
-               <text>我的订单</text>
+               <view class="txt">我的订单</view>
             </li>
             </navigator>
           <navigator url="url">
-            <li><view class="roll"><image src="src"> </image>
-              
+            <li><view class="roll">
+              <view class="icon news"></view>
                 </view>
-               <text>新闻资讯</text>
+               <view class="txt">新闻资讯</view>
             </li>
             </navigator>
           <navigator url="url">
-            <li><view class="roll"><image src="src"> </image>
-              
+            <li><view class="roll">
+              <view class="icon lock"></view>
                 </view>
-               <text>一键开锁</text>
+               <view class="txt">一键开锁</view>
             </li>
             </navigator>
           <navigator url="url">
-            <li><view class="roll"><image src="src"> </image>
-              
+            <li><view class="roll">
+              <view class="icon house"></view>
                 </view>
-               <text>附近酒店</text>
+               <view class="txt">附近酒店</view>
             </li>
             </navigator>
           <navigator url="url">
-            <li><view class="roll"><image src="src"> </image>
-              
+            <li><view class="roll">
+              <view class="icon person"></view>
                 </view>
-               <text>个人中心</text>
+               <view class="txt">个人中心</view>
             </li>
             </navigator>
      </ul>

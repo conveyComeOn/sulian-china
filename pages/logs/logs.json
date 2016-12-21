@@ -1,3 +1,5 @@
 {
-    "navigationBarTitleText": "查看启动日志"
+    "navigationBarTitleText": "预定酒店",
+    "navigationBarBackgroundColor": "#ff4d4d",
+    "navigationBarTextStyle": "white"
 }

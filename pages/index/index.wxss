@@ -16,7 +16,7 @@ flex-direction: column;
 .reverse{
 
    margin: 0 auto;
-   margin-top: 70px;
+   margin-top: 50px;
 
    width: 130px;
     height: 130px;
@@ -43,7 +43,7 @@ flex-direction: column;
     height: 1px;
   margin-left: 25rpx;
   margin-right: 25rpx;
-  margin-top: 100rpx;
+  margin-top: 80rpx;
 
 
 }
@@ -61,6 +61,41 @@ flex-direction: column;
 text-align: center;
 margin-top: 20px;
 }
-.menu ul li text{
-    margin-top: 10px;
+.menu ul li .txt{
+    color: #fff;
+    padding-top: 20rpx;
+}
+.icon{
+
+
+       margin: 17px auto;
+    background: url(../../images/hotel_icon.png) no-repeat center center;
+width: 25px;
+height: 25px;
+
+    background-size: 500px 500px;
+    font-style: normal;
+    
+}
+.alarmclock{
+     
+    background-position: -192.25px -137px;
+    
+}
+.pen{
+       
+         background-position: -285.25px -128.25px;
+
+}
+.news{
+        background-position: -227.25px -128.25px;
+}
+.lock{
+    background-position: -260.75px -128.25px;
+}
+.house{
+        background-position: -338.25px -128.25px;
+}
+.person{
+    background-position: -312px -128.25px;
 }

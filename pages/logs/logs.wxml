@@ -1,6 +1,19 @@
 <!--logs.wxml-->
 <view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log" wx:key="*this">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+      <view class="main-content">
+         <view class="near-hotel height">我附近的酒店 </view>
+         <view class="address height">{{address}}vvvvv<view class="location">  </view></view>
+          <navigator url="url"><view class="time height">12月20日 周二入住</view></navigator>
+          <view class="live-time">
+              <view class="reduce" bindtap="bindreduce">-</view>
+              <view class="middle">
+                 <text class="middle-night">住{{nighttime}}晚</text>
+                 <text class="middle-day">12月20日 周三退房</text>
+              </view>
+
+              <view class="plus" bindtap="bindplus">+</view>
+
+          </view>
+          <view class="region height">行政区域/设施</view>
+      </view>
 </view>

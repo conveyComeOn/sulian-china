@@ -1,8 +1,68 @@
 .log-list {
   display: flex;
   flex-direction: column;
-  padding: 40rpx;
+ 
 }
-.log-item {
-  margin: 10rpx;
+.container{
+  height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+ background-color: rgb(245, 246, 246);
+}
+
+/*//中心区域*/
+.main-content{
+  margin-top: 30rpx;
+  height: 80%;
+  width: 80%;
+  text-align: center;
+background-color: rgb(255, 255, 255);
+}
+ .height{
+  line-height: 500%;
+   background-color: skyblue;
+ }
+.near-hotel{
+  height: 20%;
+   
+ 
+}
+.address{
+  height: 20%;
+
+}
+.time{
+  height: 20%;
+
+}
+.live-time{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 30rpx;
+  
+}
+
+.live-time .reduce,.live-time .plus{
+
+  line-height: 100rpx;
+  height: 100rpx;
+  width:100rpx;
+  border-radius: 100rpx;
+  border:1px solid #000000;
+  
+}
+
+.middle{
+  display: flex;
+  flex-direction: column;
+   justify-content: center;
+
+}
+.middle .middle-day,.middle .middle-night{
+line-height: 150%;
+  
 }
