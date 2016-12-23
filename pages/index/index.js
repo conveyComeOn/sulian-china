@@ -18,18 +18,18 @@ Page({
   //     })
   //   })
  },gethouse:function(){
-  wx.navigateTo({
-    url: '../logs/logs',
-    success: function(res){
-      // success
-    
-    },
-    fail: function() {
-      // fail
-    },
-    complete: function() {
-      // complete
-    }
-  })
+ wx.navigateTo({
+   url: '../logs/logs',
+   success: function(res){
+     // success
+   },
+   fail: function() {
+     // fail
+   },
+   complete: function() {
+     // complete
+   }
+ })
  }
+ 
 })

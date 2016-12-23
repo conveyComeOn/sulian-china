@@ -8,3 +8,11 @@
   
   box-sizing: border-box;
 } 
+.clearfix{
+  zoom: 1;
+}
+.clearfix::after{
+  content: "";
+  clear: both;
+  display: table;
+}

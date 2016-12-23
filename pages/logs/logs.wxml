@@ -1,9 +1,12 @@
 <!--logs.wxml-->
+
+
+
 <view class="container log-list">
       <view class="main-content">
          <view class="near-hotel height">我附近的酒店<text>></text></view>
-         <view class="address height">{{address}}vvvvv<view class="location"> </view></view>
-          <navigator url="url"><view class="time height">12月20日 <text>周二入住</text></view></navigator>
+         <view class="address "><view class="add-left">{{address}}</view> <view class="location" bindtap="reverseloca"> </view></view>
+          <navigator url="../mypen/mypen"><view class="time height">12月20日 <text>周二入住</text></view></navigator>
           <view class="live-time">
               <view class="reduce" bindtap="bindreduce" style="color:{{reducecolor}}; border-color:{{reducecolor}}" >-</view>
               <view class="middle">

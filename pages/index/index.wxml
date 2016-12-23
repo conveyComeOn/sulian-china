@@ -18,7 +18,7 @@
             </navigator>
 
           
-          <navigator url="url">
+          <navigator url="../mypen/mypen">
             <li><view class="roll">
               <view class="icon pen"></view>
                 </view>

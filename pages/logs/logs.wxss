@@ -1,7 +1,7 @@
 .log-list {
   display: flex;
   flex-direction: column;
- 
+
 }
 .container{
   height: 100%;
@@ -9,6 +9,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
+ 
  background-color: rgb(245, 246, 246);
 }
 
@@ -34,9 +35,28 @@ background-color: rgb(255, 255, 255);
   padding-left: 30rpx;
 }
 .address{
-  height: 20%;
+    height: 20%;
      border-bottom: 1px solid gainsboro;
+  display: flex;
+  flex-direction: row;
+  
 
+
+}
+.add-left{
+  flex: 4;
+  padding-top: 8%;
+  line-height: 130%;
+    
+
+}
+.location{
+ margin: 5%;
+  flex: 1;
+   background: url(../../images/location.png) no-repeat center center;
+      
+height: 48px;
+width: 48px;
 }
 .time{
   height: 20%;
