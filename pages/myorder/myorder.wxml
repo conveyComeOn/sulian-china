@@ -1,0 +1,16 @@
+
+
+<view class="main">
+	<view class="loadin">
+	<block wx:for="{{menuarr}}">
+	 <view class="loadin-left {{currentMenuID==item.currentpage? 'selected':''}}" bindtap="bindchange" id="{{item.currentpage}}">
+	  {{item.text}}
+	</view>
+	</block>
+    </view>	
+
+	  <swiper class="move-swiper" bindchange="swmove" current="{{pagenow}}">
+	  	 <swiper-item> one</swiper-item>
+	  	 <swiper-item> two</swiper-item>
+	  </swiper>
+</view>
