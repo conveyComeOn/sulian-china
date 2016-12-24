@@ -6,9 +6,44 @@ Page({
     nighttime:1,
     reducecolor:"black",
     address:"正在定位",
+    month:1,
+    today:1,
+    day:1,
+    tormmer:1, 
+    allday:['日','一','二','三','四','五','六']
+    
+
   },
-  onLoad: function () {
+  onLoad: function (e) {
+console.log(e);
     var that=this;
+
+ var date=new Date;
+   var year=date.getFullYear();
+   var today=date.getDate();
+   var day=date.getDay();//星期几
+ 
+     var month=date.getMonth();
+    
+   that.gettommer(day,1);
+    
+     
+     month++;
+     if(month>12){
+      month=1;
+      year++;
+     
+    }
+    var allday=that.data.allday;
+   that.setData({
+     month:month,
+     today:today,
+      day:allday[day],
+     
+
+   })
+
+
 wx.getLocation({
   type: 'gcj02', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
   success: function(res){
@@ -54,15 +89,28 @@ if(this.data.nighttime==0){
     reducecolor:"grey"
   })
 
-}
 
+}
+ var date=new Date();
+ 
+    var num=this.data.nighttime;
+    this.gettommer(date.getDay(),num);
+  
     this.setData({
         nighttime:this.data.nighttime
     })
     } 
- 
+
   },bindplus:function(){
-this.data.nighttime++;
+
+
+    var date=new Date();
+    this.data.nighttime++
+    var num=this.data.nighttime;
+    this.gettommer(date.getDay(),num);
+
+
+
 if(this.data.nighttime>0){
 this.setData({
       reducecolor:"black",
@@ -92,5 +140,21 @@ this.setData({
     // complete
   }
 })
+  },gettommer:function(day,num){
+
+var that=this;
+    var tormmer=day+num;
+       
+     
+   tormmer=tormmer%7;
+var allday=that.data.allday;
+      that.setData({
+    
+      tormmer:allday[tormmer]
+
+   })
+
+ 
+   
   }
 })

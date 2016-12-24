@@ -20,6 +20,7 @@ Page({
    var year=date.getFullYear();
    var today=date.getDate();
    var day=date.getDay();//星期几
+   console.log(day,day++);
      var month=date.getMonth();
    that.setData({
      past:today
@@ -113,7 +114,35 @@ that.setData({
     // 页面关闭
 
   },choose:function(e){
-  console.log(e);
-  
+
+
+var item=e.target.dataset;
+
+wx.navigateBack({
+ // 回退前 delta(默认为1) 页面
+  success: function(res){
+    // success
+  },
+  fail: function() {
+    // fail
+  },
+  complete: function() {
+    // complete
+  }
+})
+
+// wx.navigateTo({
+  	
+//   url:`../logs/logs?id=${item.id}`,
+//   success: function(res){
+//     // success
+//   },
+//   fail: function() {
+//     // fail
+//   },
+//   complete: function() {
+//     // complete
+//   }
+// })
   }
 })

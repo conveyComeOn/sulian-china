@@ -1,17 +1,15 @@
 <!--logs.wxml-->
 
-
-
 <view class="container log-list">
       <view class="main-content">
          <view class="near-hotel height">我附近的酒店<text>></text></view>
          <view class="address "><view class="add-left">{{address}}</view> <view class="location" bindtap="reverseloca"> </view></view>
-          <navigator url="../mypen/mypen"><view class="time height">12月20日 <text>周二入住</text></view></navigator>
+          <navigator url="../mypen/mypen"><view class="time height">{{month}}月{{today}}日 <text>周{{day}}入住</text></view></navigator>
           <view class="live-time">
               <view class="reduce" bindtap="bindreduce" style="color:{{reducecolor}}; border-color:{{reducecolor}}" >-</view>
               <view class="middle">
                  <text class="middle-night">住{{nighttime}}晚</text>
-                 <text class="middle-day">12月20日 周三退房</text>
+                 <text class="middle-day">{{month}}月{{today}}日 周{{tormmer}}退房</text>
               </view>
 
               <view class="plus" bindtap="bindplus">+</view>
