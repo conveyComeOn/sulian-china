@@ -4,7 +4,11 @@
     "pages/index/index",
      "pages/logs/logs",
       "pages/mypen/mypen",
-      "pages/myorder/myorder"
+      "pages/myorder/myorder",
+      "pages/zhuce/zhuce",
+      "pages/mycenter/mycenter",
+      "pages/hotel/hotel",
+      "pages/detail/detail"
      
   ],
   "window":{

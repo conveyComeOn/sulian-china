@@ -30,6 +30,51 @@ Page({
      // complete
    }
  })
+ },myorder:function(){
+ wx.showToast({
+  title: '您尚未登录',
+ icon:'loading',
+  duration: 1000,
+ 
+});
+setTimeout(function(){
+ wx.navigateTo({
+     url: '../myorder/myorder',
+     success: function(res){
+      
+     },
+     fail: function() {
+       // fail
+     },
+     complete: function() {
+       // complete
+     }
+   })
+},1000);
+
+
+  
+ },getnearhotel:function(){
+
+ wx.showToast({
+  title: '定位成功',
+ icon:'',
+  duration: 1000,
+ 
+});
+
+   wx.navigateTo({
+     url: '../hotel/hotel',
+     success: function(res){
+       // success
+     },
+     fail: function() {
+       // fail
+     },
+     complete: function() {
+       // complete
+     }
+   })
  }
  
 })

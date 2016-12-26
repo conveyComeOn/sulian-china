@@ -1,0 +1,99 @@
+
+
+.top{
+	display: flex;
+	flex-direction:row;
+	justify-content: space-around;
+	margin-top: 30rpx;
+}
+.name{
+	font-size: 40rpx;
+	color: black;
+
+}
+.score{
+	color: red;
+	padding-left: 5rpx;
+	padding-right: 5rpx;
+
+}
+.command{
+	color: grey;
+	font-size: 30rpx;
+	margin-top: 54rpx;
+	
+}
+.top-left{
+	width: 80%;
+}
+.top-rigth{
+	float: right;
+	
+	width: 120rpx;
+	height: 120rpx;
+
+	padding: 5rpx;
+	box-sizing: border-box;
+  margin-left: 10rpx;
+
+}
+.top-rigth image{
+	height: 100%;
+	width: 100%;
+}
+.arrow{
+	height: 66rpx;
+	width: 40rpx;
+	display: flex;
+	float: right;
+
+}
+.arrow image{
+	height: 100%;
+	width: 100%;
+}
+
+/*表格*/
+.item{
+    display: flex;
+    flex-direction: row;
+    padding: 10px ;
+    background: white;
+    border-bottom: 0.5px solid lightgrey;
+
+	margin-top: 20rpx;
+}
+.item1{
+display: flex;
+    flex-direction: row;
+    padding: 10px ;
+    background: white;
+    border-bottom: 0.5px solid lightgrey;
+	justify-content: center;
+
+}
+.item .four{
+  flex:1;
+}
+
+/*图标*/
+.item .icon{
+    width: 26px;
+    height: 26px;
+   
+}
+/*箭头*/
+ .map{
+   color: red;
+}
+.map .arrow{
+
+	  width: 8px;
+    height: 9px;
+  margin-top: 18rpx;
+}
+.address{
+	flex: 1;
+	height: 26px;
+	line-height: 26px;
+}

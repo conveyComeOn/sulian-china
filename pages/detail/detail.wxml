@@ -1,0 +1,23 @@
+
+<view class="main">
+	<view class="top">
+		<view class="top-left">
+			<view class="name">城市精品（依恋）<text class="score">4.4</text>分</view>
+			<view class="arrow clearfix"><image src="../../images/0106arrow3x.png" mode="scaleToFill"/></view>
+            <view class="command">10人评论</view>
+		</view>
+		<view class="top-rigth"><image src="../../images/1.jpg" alt="" mode="scaleToFill" />
+		</view>
+	</view>
+	 <view class="item">
+     <image class="icon" src="../../images/location1.png"></image>
+     <label class="address">五道口一号</label>
+     <view class="map">地图<image class="arrow" src="../../images/0106arrow3x.png"></image></view></view>   
+      <view class="item">
+      <view class="four"><view class="img"><image src="" alt="" /></view>电话</view>
+      <view class="four"><view class="img1"><image src="" alt="" /></view>客服</view>
+      <view class="four"><view class="img2"><image src="" alt="" /></view>收藏</view>
+      <view class="four"><view class="img3"><image src="" alt="" /></view>分享</view>
+
+     </view>  
+</view>
