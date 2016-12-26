@@ -13,11 +13,11 @@
      <image class="icon" src="../../images/location1.png"></image>
      <label class="address">五道口一号</label>
      <view class="map">地图<image class="arrow" src="../../images/0106arrow3x.png"></image></view></view>   
-      <view class="item">
-      <view class="four"><view class="img"><image src="" alt="" /></view>电话</view>
-      <view class="four"><view class="img1"><image src="" alt="" /></view>客服</view>
-      <view class="four"><view class="img2"><image src="" alt="" /></view>收藏</view>
-      <view class="four"><view class="img3"><image src="" alt="" /></view>分享</view>
+      <view class="item1">
+      <view class="four"><view class="img"><image src="../../images/phone.png" alt="" /></view>电话</view>
+      <view class="four"><view class="img1"><image src="../../images/customer.png" alt="" /></view>客服</view>
+      <view class="four"><view class="img2"><image src="../../images/star.png" alt="" /></view>收藏</view>
+      <view class="four"><view class="img3"><image src="../../images/share.png" alt="" /></view>分享</view>
 
      </view>  
 </view>

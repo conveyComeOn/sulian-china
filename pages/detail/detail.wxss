@@ -69,12 +69,36 @@ display: flex;
     padding: 10px ;
     background: white;
     border-bottom: 0.5px solid lightgrey;
-	justify-content: center;
+	justify-content: space-around;
+	text-align: center;
 
 }
-.item .four{
-  flex:1;
+
+
+
+.item1 .four{
+  
+  display: flex;
+  flex-direction: row;
+
+ 
 }
+
+
+.four view{
+	height: 30rpx;
+	width: 30rpx;
+
+}
+.four view image{
+	width: 100%;
+	height: 100%;
+
+}
+
+
+
+
 
 /*图标*/
 .item .icon{

@@ -156,5 +156,18 @@ var allday=that.data.allday;
 
  
    
+  },mynear:function(){
+    wx.navigateTo({
+      url: '../hotel/hotel',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
   }
 })
