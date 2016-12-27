@@ -3,7 +3,7 @@
 <view class="container log-list">
       <view class="main-content">
          <view class="near-hotel height" bindtap="mynear">我附近的酒店<text>></text></view>
-         <view class="address "><view class="add-left">{{address}}</view> <view class="location" bindtap="reverseloca"> </view></view>
+         <view class="address "><view class="add-left">{{address}}</view> <view bindtap="reverseloca"> <image  class="location" src="../../images/location.png"></image></view></view>
           <navigator url="../mypen/mypen"><view class="time height">{{month}}月{{today}}日 <text>周{{day}}入住</text></view></navigator>
           <view class="live-time">
               <view class="reduce" bindtap="bindreduce" style="color:{{reducecolor}}; border-color:{{reducecolor}}" >-</view>

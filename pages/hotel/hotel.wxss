@@ -34,9 +34,7 @@ flex-direction: column;
     height: 100%;
 
 }
-.cell-text{
-    
-}
+
 .cell-text text{
 
   display: block;

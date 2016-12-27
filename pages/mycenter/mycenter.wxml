@@ -3,14 +3,17 @@
 <scroll-view>
 
 <!--头部-->
+<view class="maintop">
+<view class="back"><image src="../../images/basket.jpg" class="bg"></image></view>
 <view class="headerView">
  <image class="picture" src="{{userInfo.avatarUrl}}"></image>
  <label class="name">{{userInfo.nickName}}</label>
+ </view>
 </view>
 
 <!--表格-->
  <block wx:for-items="{{items}}" wx:key="item.id">   
-<view class="item">
+<view class="item" bindtap="findout" data-id="{{item.text}}">
  <image class="icon" src="{{item.icon}}"></image>
  <label>{{item.text}}</label>
   <image class="arrow" src="../../images/0106arrow3x.png"></image>

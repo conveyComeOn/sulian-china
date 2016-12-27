@@ -14,10 +14,32 @@
      <label class="address">五道口一号</label>
      <view class="map">地图<image class="arrow" src="../../images/0106arrow3x.png"></image></view></view>   
       <view class="item1">
-      <view class="four"><view class="img"><image src="../../images/phone.png" alt="" /></view>电话</view>
+      <view class="four" bindtap="call"><view class="img"><image src="../../images/phone.png" alt="" /></view>电话</view>
       <view class="four"><view class="img1"><image src="../../images/customer.png" alt="" /></view>客服</view>
-      <view class="four"><view class="img2"><image src="../../images/star.png" alt="" /></view>收藏</view>
-      <view class="four"><view class="img3"><image src="../../images/share.png" alt="" /></view>分享</view>
+      <view class="four" bindtap="favEvent"><view class="img2" ><image src="../../images/{{fav}}.png" alt="" /></view>收藏</view>
+      <view class="four" bindtap="share"><view class="img3"><image src="../../images/share.png" alt="" /></view>分享</view>
 
-     </view>  
+     </view> 
+     
+
+     <view class="item last">
+     <image class="icon" src="../../images/0226courseS.png"></image>
+     <label class="time">12月26日-12月28日</label><label class="night">共2晚</label>
+     <image class="arrow" src="../../images/0106arrow3x.png"></image>
+     </view>
+
+      <block wx:for="{{movie}}" wx:key="item">
+
+ <view class="cell" bindtap="cellclick">
+  <view class="left">
+  <image src="../../images/{{index}}.jpg" mode="aspectFill"></image>
+  </view>
+  <view class="cell-text">
+<view lass="text-nm">{{item.name}}</view>
+   </view>
+   <view class="buyticket">￥<text class="bigsize">{{item.minprice?item.minprice:100}}</text>起</view>
+  </view>
+  
+  </block>
+ 
 </view>

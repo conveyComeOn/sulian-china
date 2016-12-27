@@ -11,7 +11,7 @@
       <ul>
           <navigator url="url">
             <li><view class="roll">
-              <view class="icon alarmclock"></view>
+              <view class="icon"><image src="../../images/alarm.png" class="alarmclock"></image></view>
                 </view>
                <view class="txt">时租房</view>
             </li>
@@ -20,35 +20,35 @@
           
          
             <li bindtap="myorder"><view class="roll">
-              <view class="icon pen"></view>
+              <view class="icon"><image src="../../images/order.png" class="alarmclock"></image></view>
                 </view>
                <view class="txt">我的订单</view>
             </li>
            
           <navigator url="url">
             <li><view class="roll">
-              <view class="icon news"></view>
+              <view class="icon"><image src="../../images/news.png" class="alarmclock"></image></view>
                 </view>
                <view class="txt">新闻资讯</view>
             </li>
             </navigator>
           <navigator url="url">
             <li><view class="roll">
-              <view class="icon lock"></view>
+              <view class="icon"><image src="../../images/lock.png" class="alarmclock"></image></view>
                 </view>
                <view class="txt">一键开锁</view>
             </li>
             </navigator>
           
             <li><view class="roll"  bindtap="getnearhotel">
-              <view class="icon house"></view>
+              <view class="icon"><image src="../../images/hotel.png" class="alarmclock"></image></view>
                 </view>
                <view class="txt">附近酒店</view>
             </li>
        
           <navigator url="../mycenter/mycenter">
             <li><view class="roll">
-              <view class="icon person"></view>
+              <view class="icon"><image src="../../images/person.png" class="alarmclock"></image></view>
                 </view>
                <view class="txt">个人中心</view>
             </li>

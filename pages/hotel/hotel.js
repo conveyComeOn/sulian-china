@@ -18,10 +18,10 @@ var apikey=that.data.apikey;
 var openid="openid";
    wx.request({
 
+url:'https://k.zx35.com/mhaapi/com/easy/api/act/codeItem.act/MYHome/getHomeEstateByUser.act',
+    //url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYHome/getHomeEstateByUser.act',
 
-
-
-      url: 'http://mha.zx35.com/mhaapi/com/easy/api/act/MYHome/getHomeEstateByUser.act',
+ //  url: 'http://mha.zx35.com/mhaapi/com/easy/api/act/MYHome/getHomeEstateByUser.act',
       // url: 'http://m.maoyan.com/movie/list.json?type=hot',
 
 
@@ -30,7 +30,7 @@ var openid="openid";
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       success: function(res){
-      console.log(res);
+     
         var mdata=res.data.rtData;
         
         // var oldArr=that.data.movie;

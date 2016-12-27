@@ -51,12 +51,14 @@ background-color: rgb(255, 255, 255);
 
 }
 .location{
- margin: 5%;
+
   flex: 1;
-   background: url(../../images/location.png) no-repeat center center;
+  
       
 height: 48px;
 width: 48px;
+margin-top: 20rpx;
+margin-right: 20rpx;
 }
 .time{
   height: 20%;

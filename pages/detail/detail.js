@@ -2,7 +2,24 @@
 
 Page({
   data:{
-    
+    movie:[
+      {
+        name:"时尚大床房",
+        minprice:500
+      },
+        {
+        name:"牛逼双床房",
+        minprice:400
+      },
+        {
+        name:"崧泽马荣床",
+        minprice:1000
+      },
+        {
+        name: "就是得劲床",
+        minprice:200
+      },],
+      fav:'star'
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
@@ -31,6 +48,8 @@ Page({
   onReachBottom: function() {
     // 页面上拉触底事件的处理函数
    
+  },share:function(){
+  this.onShareAppMessage();
   },
   onShareAppMessage: function() {
     // 用户点击右上角分享
@@ -39,5 +58,26 @@ Page({
       desc: 'desc', // 分享描述
       path: 'path' // 分享路径
     }
+  },call:function(){
+    wx.makePhoneCall({
+      phoneNumber: '123456',
+      success: function(res) {
+        // success
+        console.log(res);
+      }
+    })
+  },
+  favEvent: function(e) {
+   
+    if (this.data.fav === 'star') {
+      this.setData({
+        fav:'like'
+      });
+      return;
+    }
+
+    this.setData({
+      fav: 'star'
+    });
   }
 })

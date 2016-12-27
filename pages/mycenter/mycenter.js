@@ -89,6 +89,33 @@ name: "单刀",
       desc: 'desc', // 分享描述
       path: 'path' // 分享路径
     }
+  },findout:function(e){
+    
+
+    var dast=e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `../emerty/emerty?id=${dast}`,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },loadup:function(){
+    var that=this;
+   wx.showModal({
+  title: '确定退出吗',
+  
+  success: function(res) {
+    if (res.confirm) {
+    
+    }
+  }
+})
   }
 })
 

@@ -1,5 +1,6 @@
 //logs.js
 // var util = require('../../utils/util.js')
+var app=getApp();
 Page({
   data: {
     logs: [],
@@ -15,7 +16,7 @@ Page({
 
   },
   onLoad: function (e) {
-console.log(e);
+
     var that=this;
 
  var date=new Date;
@@ -35,6 +36,7 @@ console.log(e);
      
     }
     var allday=that.data.allday;
+  
    that.setData({
      month:month,
      today:today,
@@ -81,7 +83,22 @@ else{
 
 
     })
-  },bindreduce:function(){
+  },onShow:function(){
+    var that=this;
+  
+    if(app.data.day){ 
+   var today=app.data.day;
+        that.setData({
+     today:today
+   })
+  }
+
+  
+
+  },
+  
+  
+  bindreduce:function(){
     if(this.data.nighttime>0){
 this.data.nighttime--;
 if(this.data.nighttime==0){

@@ -39,7 +39,7 @@
       </view>
       <view class="clearfix all-day">
       <block wx:for="{{arr[index]}}" wx:key="ite">
-      <view class="day-item" bindtap="choose">{{item}}</view>
+      <view class="day-item" bindtap="choose" data-id="{{item}}">{{item}}</view>
       </block>
       </view>
     </view>
