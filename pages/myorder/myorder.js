@@ -88,7 +88,11 @@ this.setData({
      var telenum=this.data.telephone;
      var vcode=this.data.vcode;
 wx.request({
-  url:'http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
+
+url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
+
+
+ // url:'http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
   data: {
     apikey:apikey,
 mobile:telenum,
@@ -118,7 +122,9 @@ vcode:vcode
     var apikey=this.data.apikey;
     var telenum=this.data.telephone;
 wx.request({
-  url: 'http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
+
+url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
+//  url: 'http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
   data: {apikey:apikey,mobile:telenum},
   method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
   // header: {}, // 设置请求的 header

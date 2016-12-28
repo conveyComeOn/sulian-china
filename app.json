@@ -9,7 +9,8 @@
       "pages/mycenter/mycenter",
       "pages/hotel/hotel",
       "pages/detail/detail",
-      "pages/emerty/emerty"
+      "pages/emerty/emerty",
+      "pages/news/news"
      
   ],
   "window":{

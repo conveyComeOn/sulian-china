@@ -72,15 +72,17 @@ Page({
     var apikey=this.data.apikey;
     var telenum=this.data.telephone;
 wx.request({
-  url: 'http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
+
+url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
+ // url: 'http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
   data: {apikey:apikey,mobile:telenum},
   method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
   // header: {}, // 设置请求的 header
   success: function(res){
-  console.log(res);
+  console.log(res,'success');
   },
   fail: function() {
-    
+    console.log('fail');
   },
   complete: function() {
     
@@ -94,7 +96,8 @@ wx.request({
     if(vcode&&telenum){
     
 wx.request({
-  url:'http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
+  url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
+ // url:'http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
   data: {
     apikey:apikey,
 mobile:telenum,
@@ -147,7 +150,7 @@ var psw=e.detail.value;
      if(telenum&&psw){
    wx.request({
 
-      url:'http://mha.zx35.com/mhaapi/com/easy/api/act/MYRegister/reg.act?',
+  url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYRegister/reg.act',   //  url:'http://mha.zx35.com/mhaapi/com/easy/api/act/MYRegister/reg.act?',
      
       data: {passwd:123456,mobile:telenum,apikey:apikey},
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
@@ -160,8 +163,9 @@ var psw=e.detail.value;
   duration: 1000,
  
 });
+  setTimeout(function(){
 wx.navigateBack({
-  delta: 1, // 回退前 delta(默认为1) 页面
+  delta: 3, // 回退前 delta(默认为1) 页面
   success: function(res){
     // success
   },
@@ -171,7 +175,8 @@ wx.navigateBack({
   complete: function() {
     // complete
   }
-});
+})
+  },1000);
       },
       fail: function() {
         // fail

@@ -18,7 +18,8 @@ var apikey=that.data.apikey;
 var openid="openid";
    wx.request({
 
-url:'https://k.zx35.com/mhaapi/com/easy/api/act/codeItem.act/MYHome/getHomeEstateByUser.act',
+url:'https://wxapi.hotapp.cn/proxy/?appkey=hotapp11377340&url=http://mha.zx35.com/mhaapi/com/easy/api/act/MYHome/getHomeEstateByUser.act',
+//url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYHome/getHomeEstateByUser.act',
     //url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYHome/getHomeEstateByUser.act',
 
  //  url: 'http://mha.zx35.com/mhaapi/com/easy/api/act/MYHome/getHomeEstateByUser.act',

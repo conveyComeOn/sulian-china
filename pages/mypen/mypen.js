@@ -38,6 +38,9 @@ var pastarray=[];
       month++;
       montharray.push(month);
       yeararray.push(year);
+
+
+
      
   
  //求出当月第一天在一个月中的星期几值 可以作为当月离第一天的天数
@@ -114,11 +117,15 @@ that.setData({
     // 页面关闭
 
   },choose:function(e){
+var that=this;
 
+ console.log(e,2222);
 
 var item=e.target.dataset;
 
+if(item.id<that.data.past) return;
 app.data.day=item.id;
+
 
 wx.navigateBack({
  // 回退前 delta(默认为1) 页面
@@ -148,5 +155,29 @@ wx.navigateBack({
 //     // complete
 //   }
 // })
+  },allclick:function(e){
+
+
+  var month=e.currentTarget.dataset.now;
+  var day=e.target.dataset.id;
+  console.log(month);
+  app.data.month=month;
+  app.data.day=day;
+wx.navigateBack({
+ // 回退前 delta(默认为1) 页面
+  success: function(res){
+    // success
+ 
+    
+
+  },
+  fail: function() {
+    // fail
+  },
+  complete: function() {
+    // complete
+  }
+})
+
   }
 })

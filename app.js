@@ -36,6 +36,7 @@ App(
   globalData:{
     userInfo:null
   },data:{
-    day:0
+    day:0,
+    month:0
   }
 })

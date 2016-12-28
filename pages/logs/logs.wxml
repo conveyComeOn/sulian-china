@@ -9,7 +9,7 @@
               <view class="reduce" bindtap="bindreduce" style="color:{{reducecolor}}; border-color:{{reducecolor}}" >-</view>
               <view class="middle">
                  <text class="middle-night">住{{nighttime}}晚</text>
-                 <text class="middle-day">{{month}}月{{today}}日 周{{tormmer}}退房</text>
+                 <text class="middle-day">{{twomonth}}月{{twoday}}日 周{{tormmer}}退房</text>
               </view>
 
               <view class="plus" bindtap="bindplus">+</view>

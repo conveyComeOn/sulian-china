@@ -24,22 +24,22 @@
       </view>
       <view class="clearfix all-day">
       <block wx:for="{{one}}" wx:key="ite">
-      <view class="day-item {{item<past? 'past':'' }} {{item==past? 'today':''}} " bindtap="choose" data-id="{{item}}" hover="true" hover-class="{{item!=past ? 'today':''}}">{{item}}</view>
+      <view class="day-item {{item<past? 'past':'' }} {{item==past? 'today':''}} " bindtap="choose" data-id="{{item}}" hover="true" hover-class="{{item>=past ? 'today':''}}">{{item}}</view>
       </block>
       </view>
     </view>
 
 
-<block wx:for="{{arr}}" wx:key="item">
+<block wx:for="{{arr}}" wx:key="item" >
 
-<view class="content">
+<view class="content"  bindtap="allclick" data-now="{{month[index+1]}}">
       <view class="date">{{year[index+1]}}年{{month[index+1]}}月</view>
       <view class="day">
       <view class="red">日</view><view>一</view><view>二</view><view>三</view><view>四</view><view>五</view><view class="red">六</view>
       </view>
       <view class="clearfix all-day">
       <block wx:for="{{arr[index]}}" wx:key="ite">
-      <view class="day-item" bindtap="choose" data-id="{{item}}">{{item}}</view>
+      <view class="day-item" bindtap="choose" data-id="{{item}}"  hover-class="today" hover="true">{{item}}</view>
       </block>
       </view>
     </view>
