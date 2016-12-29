@@ -13,7 +13,10 @@ Page({
     vcode:"",
     psw:"",
     noname:"false",
-    apikey:'8a53b78c56541fb00156541fb0760000'
+    apikey:'8a53b78c56541fb00156541fb0760000',
+    ma:'获取验证码',
+    back:0,
+    name:''
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
@@ -69,8 +72,13 @@ Page({
     console.log(e);
   },//获取验证码
   getVerifyCode:function(){
+    var that=this;
+     if(that.data.back>0) {return};
     var apikey=this.data.apikey;
     var telenum=this.data.telephone;
+     if(!telenum){
+return;
+    } 
 wx.request({
 
 url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
@@ -80,6 +88,30 @@ url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
   // header: {}, // 设置请求的 header
   success: function(res){
   console.log(res,'success');
+
+var num=60;
+ var time= setInterval(function(){
+num--;
+
+var hehe=num+'秒后重发';
+that.setData({
+  ma:hehe,
+  back:num
+})
+if(num<=0){
+  clearInterval(time);
+ 
+  that.setData({
+  ma:'重新获取'
+})
+}
+   },1000);
+
+
+
+
+
+
   },
   fail: function() {
     console.log('fail');
@@ -88,11 +120,15 @@ url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
     
   }
 })
-  },myname:function(){
+  },myname:function(e){
    var that=this;
       var apikey=this.data.apikey;
      var telenum=this.data.telephone;
      var vcode=this.data.vcode;
+     var name=e.detail.value;
+     that.setData({
+       name:name
+     })
     if(vcode&&telenum){
     
 wx.request({
@@ -145,24 +181,38 @@ var psw=e.detail.value;
  var apikey=this.data.apikey;
      var telenum=this.data.telephone;
      var psw=this.data.psw;
+     var name=this.data.name;
+     console.log(name);
 
 
      if(telenum&&psw){
    wx.request({
 
-  url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYRegister/reg.act',   //  url:'http://mha.zx35.com/mhaapi/com/easy/api/act/MYRegister/reg.act?',
+    //  https://k.zx35.com/mhaapi/com/easy/api/act/MYRegister/reg.act?passwd=123456&&mobile=15617736121&&apikey=8a53b78c56541fb00156541fb0760000&&openid:open
+//    url:'https://mha.zx35.com/mhaapi/com/easy/api/act/MYRegister/reg.act?',
+
+  url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYRegister/reg.act?', 
+ //  url:'http://mha.zx35.com/mhaapi/com/easy/api/act/MYRegister/reg.act?',
      
-      data: {passwd:123456,mobile:telenum,apikey:apikey},
-      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
+      data: {mobile:telenum,apikey:'8a53b78c56541fb00156541fb0760000',openid:'ope'},
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {passwd:psw}, // 设置请求的 header
       success: function(res){
+        console.log(res);
+        var success=true;
+  wx.setStorageSync('login', success);
+    wx.setStorageSync('phone',telenum);
+    wx.setStorageSync('name',name);
+
         // success
   wx.showToast({
   title: '注册成功啦',
+
  icon:'',
   duration: 1000,
  
 });
+
   setTimeout(function(){
 wx.navigateBack({
   delta: 3, // 回退前 delta(默认为1) 页面
@@ -178,7 +228,7 @@ wx.navigateBack({
 })
   },1000);
       },
-      fail: function() {
+      fail: function(fail) {
         // fail
          console.log(fail);
       },

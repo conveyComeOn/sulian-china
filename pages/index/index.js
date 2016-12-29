@@ -31,6 +31,24 @@ Page({
    }
  })
  },myorder:function(){
+
+ var log=wx.getStorageSync('login') ;
+ if(log){
+   
+   wx.navigateTo({
+     url:`../emerty/emerty?id=${"我的订单"}`,
+     success: function(res){
+       // success
+     },
+     fail: function() {
+       // fail
+     },
+     complete: function() {
+       // complete
+     }
+   })
+ }else{
+
  wx.showToast({
   title: '您尚未登录',
  icon:'loading',
@@ -51,6 +69,9 @@ setTimeout(function(){
      }
    })
 },1000);
+ }
+
+
 
 
   
@@ -75,6 +96,26 @@ setTimeout(function(){
        // complete
      }
    })
+ },getcenter:function(){
+   var that=this;
+  var log=wx.getStorageSync('login') ;
+  if(log){
+    wx.navigateTo({
+      url: '../mycenter/mycenter',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  }else{
+    that.myorder();
+
+  }
  }
  
 })

@@ -37,6 +37,9 @@ App(
     userInfo:null
   },data:{
     day:0,
-    month:0
+    month:0,
+    twoday:0,
+    twomonth:0,
+    daynight:0
   }
 })

@@ -111,3 +111,15 @@ line-height: 150%;
  
   
 }
+.yuding{
+  background-color:#ff4d4d;
+  font-weight: bold;
+	width: 80%;
+  margin: 0 auto;
+	font-size: 40rpx;
+	line-height: 200%;
+	text-align: center;
+	
+color: papayawhip;
+margin-bottom: 60rpx;
+}

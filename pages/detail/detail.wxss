@@ -168,7 +168,7 @@ display: flex;
 	padding-top: 10px;
   padding-bottom: 10px;
     position: relative;
-    border-bottom:1px solid #f0f0f0;
+    border-bottom:2px solid #f0f0f0;
 background-color: white;
 
   
@@ -212,4 +212,62 @@ background-color: white;
     font-weight: bold;
     padding-left: 5rpx;
     padding-right: 5rpx;
+}
+.bed{
+display: flex;
+flex-direction: column;
+padding: 20rpx;
+
+
+
+}
+.cell-top{
+	display: flex;
+	
+
+}
+.menshi{
+flex: 1;
+text-align: center;
+margin-top:100rpx;
+}
+.yuding{
+
+background-color:#ff4d4d;
+color: write;
+padding:10rpx;
+height: 60rpx;
+text-align: center;
+line-height: 60rpx;
+width: 100rpx;
+float: right; 
+}
+.del{
+text-decoration: line-through;
+}
+.red{
+	color: red;
+	font-size: 56rpx;
+	font-weight: bold;
+}
+.red1{
+	color: red;
+	font-size: 40rpx;
+	margin-top: 18rpx;
+	font-weight: bold;
+}
+.cell-bottom{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background-color: greenyellow;
+	margin-top: 40rpx;
+
+}
+.cell-bottom-four{
+
+	display: flex;
+	flex-direction: column;
+	padding-top: 50rpx;
+	padding-bottom: 50rpx;
 }

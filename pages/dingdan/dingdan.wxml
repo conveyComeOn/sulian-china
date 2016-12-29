@@ -1,0 +1,40 @@
+
+
+
+<view class="ul">
+<view class="pad">
+<view class="nice">{{name}}</view>
+        	 <view class="send1">入住{{month}}月{{day}}日   {{twomonth}}月{{twoday}}日离店 共{{daynight}}晚</view></view>
+ 
+                        <view class="phoneNO">
+                            <view class="li">房间</view>
+                            <input  class="notempty linecenter" bindblur="getnum" type="number" value="{{room}}" disabled="true" />
+
+                 <view class="plus" bindtap="plus">{{plus}}</view>
+                        </view>
+                        <view class="phoneNO">
+                            <view class="li">姓名</view>
+                            <input  class="notempty linecenter" bindblur="getnum" value="{{hehe}}"/>
+                        </view>
+                        <view class="phoneNO">
+                            <view class="li">手机号</view>
+                            <input  value="{{phonenum}}" class="notempty linecenter" bindblur="getnum" />
+                        </view>
+                        <view class="phoneNO">
+                            <view class="li">备注</view>
+                            <input class="notempty linecenter" bindblur="getnum" />
+                        </view>
+
+
+             <view class="pad">
+                <view class="nice">温馨提示</view>
+        	 <view class="send">请与入住当日12:00后到酒店前台办理入住，如提前到店，视酒店空房情况安排</view></view> 
+          
+ </view>
+ <view class="car_bot">
+	<view class="car_bot_wrap">
+		总价
+		<span class="car_order_confirm" bindtap="toPay">下单</span>
+		<span class="car_total_money">￥{{price}}</span>
+	</view>
+</view>                       

@@ -145,10 +145,7 @@ else{
    //
    //2 31 5 2016
    var firstDay = new Date(year,month-1,today).getDay();
- 
-   console.log(month);
     that.gettommer(firstDay,1);
-   console.log(month);
         that.setData({
      today:today,
      day:allday[firstDay],
@@ -176,24 +173,25 @@ if(that.data.nighttime==1){
 
 
     var date=new Date();
- var year=that.data.year
+ var year=that.data.year;
     var num=that.data.nighttime;
     that.gettommer(this.data.now,-1);
   
     var move=that.data.twoday-1;
        var twomonth=that.data.twomonth;
+        console.log(move,year);
         if (move<=0) {
-       	move=monthDay;
+       
         twomonth--;
+   
        	if (twomonth<=0) {
        		year--;
        		twomonth=12
        	};
-
+    var monthDay = new Date(year,twomonth,0).getDate();
+        	move=monthDay;
 
        };
-       
-       var monthDay = new Date(year,twomonth,0).getDate();
       
 
     that.setData({
@@ -216,9 +214,9 @@ var that=this;
     that.gettommer(that.data.now,1);
        var move=that.data.twoday+1;
        var twomonth=that.data.twomonth;
-       var year=that.data.year
+       var year=that.data.year;
        var monthDay = new Date(year,twomonth,0).getDate();
-       if (move>=monthDay) {
+       if (move>monthDay) {
        	move=1;
       twomonth++;
        	if (twomonth>=12) {
@@ -286,18 +284,11 @@ var allday=that.data.allday;
  
    
   },mynear:function(){
-    wx.navigateTo({
-      url: '../hotel/hotel',
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
+    //我附近的酒店
+
+
+
+
   },gettwo:function(monthDay,month,today){
   	var that=this;
 var mingtian=today+1;
@@ -317,5 +308,43 @@ if (mingtian>monthDay) {
  		twomonth:mingyue
  	})
 
+  },yuding:function(){
+
+     var twoday=this.data.twoday;
+     var twomonth=this.data.twomonth;
+      var day=this.data.today;
+     var month=this.data.month;
+     var daynight=this.data.nighttime;
+
+     
+app.data.twoday=twoday;
+app.data.twomonth=twomonth;
+
+app.data.day=day;
+app.data.month=month;
+app.data.daynight=daynight;
+
+
+
+wx.navigateTo({
+      url: '../hotel/hotel',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },myregion:function(){
+
+wx.navigateTo({
+      url: '../things/things',
+      success: function(res){
+        // success
+      }
+    })
   }
 })

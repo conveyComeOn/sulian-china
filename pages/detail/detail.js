@@ -1,7 +1,14 @@
 
-
+var app=getApp();
 Page({
   data:{
+  ineed:[true,false,false,false],
+
+      day:0,
+      month:0,
+      twoday:0,
+      twomonth:0,
+      daynight:0,
     movie:[
       {
         name:"时尚大床房",
@@ -23,6 +30,20 @@ Page({
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
+
+  var twoday=app.data.twoday;
+  var twomonth=app.data.twomonth;
+  var day=app.data.day;
+  var month=app.data.month;
+  var daynight=app.data.daynight;
+  this.setData({
+    twoday:twoday,
+    twomonth:twomonth,
+    day:day,
+    month:month,
+    daynight:daynight
+
+  })
    
   },
   onReady:function(){
@@ -79,5 +100,38 @@ Page({
     this.setData({
       fav: 'star'
     });
+  },cellclick:function(e){
+    console.log();
+    var array=[];
+    for(var i=0;i<4;i++){
+
+      if(i==e.currentTarget.dataset.id){
+         array.push(true);
+      }else{
+         array.push(false);
+      }
+     
+    }
+    this.setData({
+      ineed:array
+    })
+  },yuding:function(e){
+    console.log(e);
+    var price=e.target.dataset.id;
+    var name=e.target.dataset.name;
+    
+    wx.navigateTo({
+      url: `../dingdan/dingdan?price=${price}&&name=${name}`,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+
   }
 })

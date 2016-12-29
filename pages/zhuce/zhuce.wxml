@@ -12,7 +12,7 @@
                         <view class="flex-item">
                                <input name="code" placeholder="短信验证码"   class="linecenter" bindblur="makesure"/>
                       </view>
-            <view class="flex-item-button" bindtap="getVerifyCode"> 获取验证码
+            <view class="flex-item-button" bindtap="getVerifyCode"> {{ma}}
 </view>
         </view>
                         
@@ -31,5 +31,5 @@
                             <input type="password" placeholder="6-20字母,数字"  class="notempty linecenter" bindblur="getpsw"  />
                         </view>
                      </view>
-                     <button plain="true"class="zhuce"  bindtap="zhuce" disabled="{{noworno}}" >立即注册</button>
+                     <button plain="true"class="zhuce"  bindtap="zhuce" disabled="{{noworno}}">立即注册</button>
      </view>                

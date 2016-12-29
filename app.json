@@ -10,7 +10,10 @@
       "pages/hotel/hotel",
       "pages/detail/detail",
       "pages/emerty/emerty",
-      "pages/news/news"
+      "pages/news/news",
+      "pages/dingdan/dingdan",
+      "pages/things/things"
+      
      
   ],
   "window":{

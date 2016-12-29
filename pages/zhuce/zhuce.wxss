@@ -7,7 +7,7 @@
 }
 .flex-item{
     flex: 5;
-    margin-left: 23px;
+    margin-left: 63rpx;
      height: 100%;
 }
 .flex-item-button{
@@ -36,7 +36,7 @@
     align-items:center;
 }
 .notempty{
-    margin-left: 23px;
+    margin-left: 63rpx;
    
    
 }

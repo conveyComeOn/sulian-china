@@ -1,5 +1,5 @@
 
-
+var md = require('../../utils/md5.js')
 
 Page({
   data:{
@@ -13,8 +13,11 @@ Page({
     currentMenuID:"0",
     pagenow:"0",
     apikey:"8a53b78c56541fb00156541fb0760000",
-    telephone:"123",
-    vcode:"123"
+    telephone:"",
+    vcode:"123",
+     ma:'获取验证码',
+     back:0,
+     password:123456
  
   },
   onLoad:function(options){
@@ -92,7 +95,7 @@ wx.request({
 url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
 
 
- // url:'http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
+//url:'https://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
   data: {
     apikey:apikey,
 mobile:telenum,
@@ -102,11 +105,32 @@ vcode:vcode
   // header: {}, // 设置请求的 header
   success: function(res){
     // success
-    console.log('正确了');
+    console.log(res);
+
+
+  var success=true;
+  wx.setStorageSync('login', success);
+    wx.setStorageSync('phone',telenum);
+    wx.setStorageSync('name',name);
+wx.navigateBack({
+  delta: 3, // 回退前 delta(默认为1) 页面
+  success: function(res){
+    // success
   },
   fail: function() {
     // fail
-     cosonle.log('失败了');
+  },
+  complete: function() {
+    // complete
+  }
+})
+
+
+
+  },
+  fail: function(res) {
+    // fail
+     console.log(res);
   },
   complete: function() {
     // complete
@@ -116,20 +140,144 @@ vcode:vcode
 
 
   phoneDataChange:function(e){
-   console.log(e);
-  },//获取验证码
-  getVerifyCode:function(){
-    var apikey=this.data.apikey;
+   this.setData({
+     telephone:e.detail.value
+   })
+  
+  },getpasd:function(e){
+     
+   this.setData({
+     password:e.detail.value
+   })
+
+  },
+  //登录
+  loadin:function(){
+    
+ var apikey=this.data.apikey;
     var telenum=this.data.telephone;
+    var password=this.data.password;
+
+   var passwd=md.hex_md5(password);
+    if(telenum && password){
+
+
+     wx.request({
+
+//url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYRegister/loginmv.act?',
+url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYRegister/loginms.act?',
+
+
+
+
+    data: {apikey:apikey,mobile:telenum,passwd:passwd},
+
+  // data: {apikey:apikey,mobile:telenum,vcode:2323},
+
+       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+       // header: {}, // 设置请求的 header
+       success: function(res){
+         // success
+         console.log(res);
+    //      console.log(res,'success');
+          if(res.data.rtState==0){
+            
+                    var success=true;
+  wx.setStorageSync('login', success);
+    wx.setStorageSync('phone',telenum);
+       wx.navigateBack({
+      delta: 1, // 回退前 delta(默认为1) 页面
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      
+      },
+      complete: function() {
+        // complete
+      }
+    })
+          }else{
+            wx.showModal({
+  title: '提示',
+  content: '账号或密码错误',
+ 
+})
+          }
+       
+       
+       },
+       fail: function(res) {
+         // fail
+           console.log(res,'fail');
+       },
+       complete: function() {
+         // complete
+       }
+     })
+    }
+  },
+  
+  
+  
+  
+   //获取验证码
+  getVerifyCode:function(){
+
+    var that=this;
+    if(that.data.back>0){
+ return;
+    }
+    var apikey=that.data.apikey;
+    var telenum=that.data.telephone;
+    if(!telenum || !that.isMobilePhone(telenum)){
+      
+      wx.showToast({
+  title: '这就不是个电话',
+  icon: 'loading',
+  duration: 1000
+})
+return;
+    } 
 wx.request({
 
+
 url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
-//  url: 'http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
+ // url: 'http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
   data: {apikey:apikey,mobile:telenum},
+
+
   method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
   // header: {}, // 设置请求的 header
   success: function(res){
   console.log(res);
+
+
+  
+var num=60;
+ var time= setInterval(function(){
+num--;
+
+var hehe=num+'秒后重发';
+that.setData({
+  ma:hehe,
+  back:num
+})
+if(num<=0){
+  clearInterval(time);
+ 
+  that.setData({
+  ma:'重新获取'
+})
+}
+   },1000);
+
+
+
+
+
+
   },
   fail: function() {
     
@@ -151,5 +299,16 @@ url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
         // complete
       }
     })
-  }
+  },// 判断是否为手机号
+isMobilePhone:function(phone) {
+    // your implement
+
+
+    var re=/^([0-9]{11})|(13[56][0-9]{8})$/;
+    if (re.test(phone)) return true;
+    else {
+      
+        return false;
+    }
+}
 })

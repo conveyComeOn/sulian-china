@@ -112,6 +112,20 @@ name: "单刀",
   
   success: function(res) {
     if (res.confirm) {
+      var fail=false;
+      wx.setStorageSync('login', fail);
+      wx.navigateBack({
+        delta: 1, // 回退前 delta(默认为1) 页面
+        success: function(res){
+          
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      })
     
     }
   }
