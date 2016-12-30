@@ -36,7 +36,7 @@ Page({
  if(log){
    
    wx.navigateTo({
-     url:`../emerty/emerty?id=${"我的订单"}`,
+     url:`../pao/pao`,
      success: function(res){
        // success
      },

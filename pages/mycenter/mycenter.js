@@ -93,7 +93,23 @@ name: "单刀",
     
 
     var dast=e.currentTarget.dataset.id;
-    wx.navigateTo({
+     var index=e.currentTarget.dataset.index;
+
+     if(index==0){
+   wx.navigateTo({
+      url: `../pao/pao`,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+     }else{
+   wx.navigateTo({
       url: `../emerty/emerty?id=${dast}`,
       success: function(res){
         // success
@@ -105,6 +121,8 @@ name: "单刀",
         // complete
       }
     })
+     }
+ 
   },loadup:function(){
     var that=this;
    wx.showModal({
@@ -130,6 +148,20 @@ name: "单刀",
     }
   }
 })
+  },clear:function(){
+
+wx.showModal({
+  title: '提示',
+  content: '确定清理数据吗',
+  success: function(res) {
+    if (res.confirm) {
+      wx.clearStorage()
+    }
+  }
+})
+
+
+          
   }
 })
 

@@ -11,7 +11,11 @@
       "pages/detail/detail",
       "pages/emerty/emerty",
       "pages/news/news",
-      "pages/dingdan/dingdan"
+      "pages/dingdan/dingdan",
+      "pages/pao/pao",
+      "pages/success/success",
+      
+       "pages/thing/index"
      
       
      

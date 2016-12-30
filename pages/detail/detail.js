@@ -119,8 +119,13 @@ Page({
     console.log(e);
     var price=e.target.dataset.id;
     var name=e.target.dataset.name;
-    
-    wx.navigateTo({
+    var succe=wx.getStorageSync('login');
+    console.log(succe);
+    if(succe){
+
+
+      console.log('突然这是咋回事');
+wx.navigateTo({
       url: `../dingdan/dingdan?price=${price}&&name=${name}`,
       success: function(res){
         // success
@@ -132,6 +137,35 @@ Page({
         // complete
       }
     })
+    }else{
+wx.showModal({
+  title: '您还未登录',
+  content: '不登陆咋预定呢',
+  success: function(res) {
+    if (res.confirm) {
+      wx.navigateTo({
+      url: '../myorder/myorder',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+    }
+  }
+})
+
+
+
+
+     
+    }
+    
+    
 
   }
 })

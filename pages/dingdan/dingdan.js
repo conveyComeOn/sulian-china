@@ -13,7 +13,8 @@ Page({
       room:1,
       plus:"+",
       hehe:"近平",
-      phonenum:"110"
+      phonenum:"110",
+      quxiao:''
    
   },
   onLoad:function(options){
@@ -28,7 +29,7 @@ Page({
   var month=app.data.month;
   var daynight=app.data.daynight;
    var hehe = wx.getStorageSync('name') ;
-   var phonenum= wx.getStorageSync('phonenum');
+   var phonenum= wx.getStorageSync('phone');
    if(hehe || phonenum){
      this.setData({
     
@@ -82,43 +83,119 @@ Page({
       desc: 'desc', // 分享描述
       path: 'path' // 分享路径
     }
-  },plus:function(){
-    var that=this;
+  },addCount:function(){
 
-if(this.data.plus=="-"){
-  var room=this.data.room-1;
-  if(room<2){
-      that.setData({
-          plus:"+"
-
-     })
+  var that=this;
+  var room=that.data.room;
+  if(room>=3){
+    console.log(room)
+  wx.showModal({
+  title: '提示',
+  content: '一个客人最多定三间哦',
+  success: function(res) {
+    if (res.confirm) {
+      console.log('用户点击确定')
+    }
   }
+})
+  }else{
+room++;
+  }
+
+
+   
+   
+that.setData({
+  room:room
+})
+   
+  },minusCount:function(){
+      var that=this;
+  var room=that.data.room;
+  if(room==1){
+  
+ 
+  }else{
+room--;
+  }
+
+that.setData({
+  room:room
+})
+   
+  },
+  
+  
+  //获取电话号码
+  getnum:function(e){
+   
+   
+   this.setData({
+    phonenum:e.detail.value
+   })},getname:function(e){
+       this.setData({
+   hehe:e.detail.value
+   })
+
+   },toPay:function(){
+
+
+     
+var that=this;
+var hehe=that.data.hehe;
+var phonenum=that.data.phonenum;
+var hehe=that.data.hehe;
+if(hehe&&phonenum){
+
+
+  wx.showModal({
+  title: '请确认后所填信息',
+  content: '确认预定吗',
+  success: function(res) {
+    if (res.confirm) {
+     
+//把住店日期 离店日期 住几晚 房间数 姓名 手机号全部记录在案
+   var array= wx.getStorageSync('array');
+   wx.setStorageSync('name', hehe);
+if(!array){
+  var array=[];
+}
+array.push(that.data);
+wx.setStorageSync('array', array);
+
+wx.redirectTo({
+  url: '../success/success',
+  success: function(res){
+    // success
+  },
+  fail: function() {
+    // fail
+  },
+  complete: function() {
+    // complete
+  }
+})
+
+
+
+
+
+    }
+  }
+})
 }else{
-
-  var room=  this.data.room+1;
-  if(room>3){
-
-    wx.showModal({
-      title: '提示',
-      content: '一个客人最多定三间哦',
-      success: function(res) {
-       if (res.confirm) {
-          that.setData({
-          plus:"-"
-
-     })
-        }
-      }
-    })
-    return;
+  wx.showModal({
+  title: '提示',
+  content: '名字和电话都要填哦',
+  success: function(res) {
+    if (res.confirm) {
+     
+    }
   }
+})
 }
 
 
 
-
-this.setData({
-  room:room
-})
-  }
+   }
 })

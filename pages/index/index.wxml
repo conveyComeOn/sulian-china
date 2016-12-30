@@ -9,7 +9,7 @@
       <view class="line"></view>
       <view class="menu">
       <ul>
-          <navigator url="url">
+          <navigator url="../success/success">
             <li><view class="roll">
               <view class="icon"><image src="../../images/alarm.png" class="alarmclock"></image></view>
                 </view>
@@ -32,7 +32,7 @@
                <view class="txt">新闻资讯</view>
             </li>
             </navigator>
-          <navigator url="url">
+          <navigator url="">
             <li><view class="roll">
               <view class="icon"><image src="../../images/lock.png" class="alarmclock"></image></view>
                 </view>

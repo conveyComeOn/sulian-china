@@ -16,13 +16,23 @@ Page({
     twoday:1,
     year:2016,
 
-    allday:['日','一','二','三','四','五','六']
+    allday:['日','一','二','三','四','五','六'],
+    region:'行政区域/设施',
+    menu:{}
     
 
   },
   onLoad: function (e) {
+  var that=this;
+if(e.id){
+that.setData({
+  region:'已选定',
+  menu:e.id
+})
+}
 
-    var that=this;
+
+  
 
  var date=new Date;
    var year=date.getFullYear();
@@ -111,7 +121,8 @@ else{
 
 
     })
-  },onShow:function(){
+  },onShow:function(e){
+    
     var that=this;
   
     if(app.data.day){ 
@@ -339,9 +350,10 @@ wx.navigateTo({
       }
     })
   },myregion:function(){
+    var menu=this.data.menu;
 
 wx.navigateTo({
-      url: '../things/things',
+      url: `../thing/index?id${menu}`,
       success: function(res){
         // success
       }

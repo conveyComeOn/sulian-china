@@ -92,14 +92,14 @@ this.setData({
      var vcode=this.data.vcode;
 wx.request({
 
-url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
+//url:'https://wxapi.hotapp.cn/proxy/?appkey=hotapp11377340&url=https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
 
 
-//url:'https://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
+url:'https://wxapi.hotapp.cn/proxy/?appkey=hotapp11377340&&url=http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
   data: {
     apikey:apikey,
 mobile:telenum,
-vcode:vcode
+vcode:2323
   },
   method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
   // header: {}, // 设置请求的 header
@@ -111,11 +111,24 @@ vcode:vcode
   var success=true;
   wx.setStorageSync('login', success);
     wx.setStorageSync('phone',telenum);
-    wx.setStorageSync('name',name);
+  //  wx.setStorageSync('name',name);
 wx.navigateBack({
   delta: 3, // 回退前 delta(默认为1) 页面
   success: function(res){
-    // success
+    
+      // success
+    wx.navigateTo({
+      url: '../logs/logs',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
   },
   fail: function() {
     // fail
@@ -159,13 +172,14 @@ wx.navigateBack({
     var password=this.data.password;
 
    var passwd=md.hex_md5(password);
+   console.log(telenum,password);
     if(telenum && password){
 
 
      wx.request({
 
 //url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYRegister/loginmv.act?',
-url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYRegister/loginms.act?',
+url:'https://wxapi.hotapp.cn/proxy/?appkey=hotapp11377340&url=http://k.zx35.com/mhaapi/com/easy/api/act/MYRegister/loginms.act?',
 
 
 
@@ -186,9 +200,22 @@ url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYRegister/loginms.act?',
   wx.setStorageSync('login', success);
     wx.setStorageSync('phone',telenum);
        wx.navigateBack({
-      delta: 1, // 回退前 delta(默认为1) 页面
+      delta: 3, // 回退前 delta(默认为1) 页面
       success: function(res){
         // success
+        
+    wx.navigateTo({
+      url: '../logs/logs',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
       },
       fail: function(res) {
         // fail
@@ -240,13 +267,16 @@ url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYRegister/loginms.act?',
 })
 return;
     } 
+
+  
+
 wx.request({
 
-
-url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
+//url=https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act'
+url:'https://wxapi.hotapp.cn/proxy/?appkey=hotapp11377340&&url=http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act?',
  // url: 'http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
   data: {apikey:apikey,mobile:telenum},
-
+ 
 
   method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
   // header: {}, // 设置请求的 header

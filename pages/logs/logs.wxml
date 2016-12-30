@@ -15,7 +15,7 @@
               <view class="plus" bindtap="bindplus">+</view>
 
           </view>
-          <view class="region" bindtap="myregion"><view> <text class="first">行政区域/设施</text><text>></text></view></view>
+          <view class="region" bindtap="myregion"><view> <text class="first">{{region}}</text><text>></text></view></view>
       </view>
 
 <view class="yuding" bindtap="yuding">预定酒店</view>

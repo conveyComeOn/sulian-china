@@ -81,7 +81,7 @@ return;
     } 
 wx.request({
 
-url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
+url:'https://wxapi.hotapp.cn/proxy/?appkey=hotapp11377340&url=http://k.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
  // url: 'http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/send.act',
   data: {apikey:apikey,mobile:telenum},
   method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
@@ -132,12 +132,12 @@ if(num<=0){
     if(vcode&&telenum){
     
 wx.request({
-  url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
+  url:'https://wxapi.hotapp.cn/proxy/?appkey=hotapp11377340&url=http://k.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
  // url:'http://mha.zx35.com/mhaapi/com/easy/api/act/MYSms/verify.act',
   data: {
     apikey:apikey,
 mobile:telenum,
-vcode:vcode
+vcode:2323
   },
   method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
   // header: {}, // 设置请求的 header
@@ -191,7 +191,7 @@ var psw=e.detail.value;
     //  https://k.zx35.com/mhaapi/com/easy/api/act/MYRegister/reg.act?passwd=123456&&mobile=15617736121&&apikey=8a53b78c56541fb00156541fb0760000&&openid:open
 //    url:'https://mha.zx35.com/mhaapi/com/easy/api/act/MYRegister/reg.act?',
 
-  url:'https://k.zx35.com/mhaapi/com/easy/api/act/MYRegister/reg.act?', 
+  url:'https://wxapi.hotapp.cn/proxy/?appkey=hotapp11377340&url=http://k.zx35.com/mhaapi/com/easy/api/act/MYRegister/reg.act?', 
  //  url:'http://mha.zx35.com/mhaapi/com/easy/api/act/MYRegister/reg.act?',
      
       data: {mobile:telenum,apikey:'8a53b78c56541fb00156541fb0760000',openid:'ope'},
@@ -199,7 +199,7 @@ var psw=e.detail.value;
       header: {passwd:psw}, // 设置请求的 header
       success: function(res){
         console.log(res);
-        var success=true;
+       var success=true;
   wx.setStorageSync('login', success);
     wx.setStorageSync('phone',telenum);
     wx.setStorageSync('name',name);
@@ -218,6 +218,18 @@ wx.navigateBack({
   delta: 3, // 回退前 delta(默认为1) 页面
   success: function(res){
     // success
+    wx.navigateTo({
+      url: '../logs/logs',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
   },
   fail: function() {
     // fail

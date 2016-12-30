@@ -13,16 +13,16 @@
 
 <!--表格-->
  <block wx:for-items="{{items}}" wx:key="item.id">   
-<view class="item" bindtap="findout" data-id="{{item.text}}">
+<view class="item" bindtap="findout" data-id="{{item.text}}" data-index="{{index}}">
  <image class="icon" src="{{item.icon}}"></image>
  <label>{{item.text}}</label>
   <image class="arrow" src="../../images/0106arrow3x.png"></image>
 
 </view>
  </block>
-<view class="item last">
+<view class="item last" bindtap="clear">
  <image class="icon" src="../../images/0225msgS.png"></image>
- <label>意见反馈</label>
+ <label>清理缓存</label>
   <image class="arrow" src="../../images/0106arrow3x.png"></image>
 </view>
 <view class="item last">
