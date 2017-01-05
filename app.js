@@ -40,6 +40,8 @@ App(
     month:0,
     twoday:0,
     twomonth:0,
-    daynight:0
+    daynight:0,
+    city:'',
+    menus:''
   }
 })

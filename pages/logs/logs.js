@@ -18,18 +18,22 @@ Page({
 
     allday:['日','一','二','三','四','五','六'],
     region:'行政区域/设施',
-    menu:{}
+    menu:{},
+    hotel:"酒店",
+    city:'我附近'
     
 
   },
   onLoad: function (e) {
   var that=this;
-if(e.id){
-that.setData({
-  region:'已选定',
-  menu:e.id
+ if(e.now){
+  that.setData({
+  hotel:e.now
 })
-}
+  }
+
+
+ 
 
 
   
@@ -112,18 +116,25 @@ else{
   }
 })
 
-
-
-    this.setData({
-      // logs: (wx.getStorageSync('logs') || []).map(function (log) {
-      //   return util.formatTime(new Date(log))
-      // })
-
-
-    })
   },onShow:function(e){
+      var that=this;
+
+  console.log(app.data.menus);
+if(app.data.menus){
+that.setData({
+  region:'已选定',
+  // menu:e.id
+})
+}
+
+
+if(app.data.city){
+  that.setData({
+city:app.data.city
+  })
+}
     
-    var that=this;
+  
   
     if(app.data.day){ 
 
@@ -259,9 +270,11 @@ that.setData({
       wx.setStorageSync('latitude', res.latitude);
       wx.setStorageSync('longitude',res.longitude);
         wx.setStorageSync('address',res.name);
+        app.data.city="我附近";
     that.setData({
       
       address:res.name,
+      city:'我附近'
   
       
     })
@@ -294,8 +307,20 @@ var allday=that.data.allday;
 
  
    
-  },mynear:function(){
-    //我附近的酒店
+
+  },
+   //我附近的酒店和选择地点
+  mynear:function(){
+       
+
+       wx.navigateTo({
+         url: '../switchcity/switchcity',
+         success: function(res){
+      
+         }
+        
+       })
+   
 
 
 
@@ -326,6 +351,7 @@ if (mingtian>monthDay) {
       var day=this.data.today;
      var month=this.data.month;
      var daynight=this.data.nighttime;
+     app.data.menus='';
 
      
 app.data.twoday=twoday;
@@ -335,10 +361,11 @@ app.data.day=day;
 app.data.month=month;
 app.data.daynight=daynight;
 
-
+var all=this.data.city+'的'+this.data.hotel;
+console.log(all);
 
 wx.navigateTo({
-      url: '../hotel/hotel',
+      url: `../hotel/hotel?name=${all}`,
       success: function(res){
         // success
       },

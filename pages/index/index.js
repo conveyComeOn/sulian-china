@@ -17,9 +17,19 @@ Page({
   //       userInfo:userInfo
   //     })
   //   })
- },gethouse:function(){
+ },gethouse:function(e){
+var hotel="";
+
+
+
+   if(e.target.dataset.id==1){
+hotel="民宿";
+   }else{
+hotel="酒店";
+   }
+   
  wx.navigateTo({
-   url: '../logs/logs',
+   url: `../logs/logs?now=${hotel}`,
    success: function(res){
      // success
    },

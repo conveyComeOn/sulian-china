@@ -3,9 +3,16 @@
 
   <image src="../../images/bg.png" mode="aspectFill" class="play-bg"></image>
   <view class="main">
-      <view class="reverse">
-        <view class="reverse-btn" bindtap="gethouse">预订酒店</view>
+  <view class="main-top">
+    <view class="reverse">
+        <view class="reverse-btn" bindtap="gethouse" data-id="1">民宿旅居</view>
       </view>
+       <view class="reverse">
+          <view class="reverse-btn" bindtap="gethouse"  data-id="2">城市酒店</view>
+      </view>
+  
+  </view>
+    
       <view class="line"></view>
       <view class="menu">
       <ul>
@@ -25,11 +32,11 @@
                <view class="txt">我的订单</view>
             </li>
            
-          <navigator url="../news/news">
+          <navigator url="../find/index">
             <li><view class="roll">
               <view class="icon"><image src="../../images/news.png" class="alarmclock"></image></view>
                 </view>
-               <view class="txt">新闻资讯</view>
+               <view class="txt">发现宿联</view>
             </li>
             </navigator>
           <navigator url="">

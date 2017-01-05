@@ -9,7 +9,7 @@
 
 
 <view lass="text-nm">{{item.name}}</view>
-  <view class="text-sc">{{item.code}}分</view>
+  <view class="text-sc">{{item.code?item.code:5}}分</view>
   <view class="text-city">{{item.desc}}</view>
   <text class="text-jia">距离您5米</text>
  

@@ -15,7 +15,9 @@
       "pages/pao/pao",
       "pages/success/success",
       
-       "pages/thing/index"
+       "pages/thing/index",
+       "pages/switchcity/switchcity",
+       "pages/find/index"
      
       
      

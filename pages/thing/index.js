@@ -1,4 +1,5 @@
               import menus from './resources/json/menus.js'
+              var app=getApp();
 Page({
   data:{
     text:"Page main",
@@ -107,21 +108,34 @@ Page({
     console.log(e)
   },checked:function(){
    var menus = this.data.menus;
-   var choose='已选定';
+  app.data.menus='已选定';
+  //  var choose='已选定';
+   wx.navigateBack({
+     delta: 1, // 回退前 delta(默认为1) 页面
+     success: function(res){
+       // success
+     },
+     fail: function() {
+       // fail
+     },
+     complete: function() {
+       // complete
+     }
+   })
 
-    wx.redirectTo({
-      url: `../logs/logs?id=${menus}`,
-      success: function(res){
-        // success
-      },
-      fail: function(e) {
-        // fail
-        console.log(e);
-      },
-      complete: function() {
-        // complete
-      }
-    })
+    // wx.redirectTo({
+    //   url: `../logs/logs?id=${menus}`,
+    //   success: function(res){
+    //     // success
+    //   },
+    //   fail: function(e) {
+    //     // fail
+    //     console.log(e);
+    //   },
+    //   complete: function() {
+    //     // complete
+    //   }
+    // })
 
 // wx.navigateTo({
 //       url: `../logs/logs?id=${menus}`,

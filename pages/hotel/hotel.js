@@ -54,6 +54,13 @@ url:'https://wxapi.hotapp.cn/proxy/?appkey=hotapp11377340&url=http://mha.zx35.co
     })
   },
   onLoad:function(options){
+     
+     wx.setNavigationBarTitle({
+      title:options.name,
+      success: function(res) {
+        // success
+      }
+    })
     var that=this;
     // 页面初始化 options为页面跳转所带来的参数
     this.loadmore(0);

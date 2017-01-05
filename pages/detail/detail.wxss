@@ -260,7 +260,8 @@ text-decoration: line-through;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	background-color: greenyellow;
+	background-color:skyblue;
+
 	margin-top: 40rpx;
 
 }

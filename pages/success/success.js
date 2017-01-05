@@ -11,7 +11,7 @@ Page({
     zong--;
     if(zong<=0){
       clearInterval(timer);
-    //  that.backhome();
+  that.backhome();
 
 
     }
@@ -60,18 +60,18 @@ Page({
       path: 'path' // 分享路径
     }
   },backhome:function(){
-    wx.redirectTo({
-        url: '../index/index',
-        success: function(res){
-          // success
-        },
-        fail: function() {
-          // fail
-        },
-        complete: function() {
-          // complete
-        }
-      })
+   wx.navigateBack({
+     delta: 6, // 回退前 delta(默认为1) 页面
+     success: function(res){
+       // success
+     },
+     fail: function() {
+       // fail
+     },
+     complete: function() {
+       // complete
+     }
+   })
   },checkout:function(){
   
     wx.redirectTo({
