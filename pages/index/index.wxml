@@ -32,7 +32,7 @@
                <view class="txt">我的订单</view>
             </li>
            
-          <navigator url="../find/index">
+          <navigator url="../hot/hot">
             <li><view class="roll">
               <view class="icon"><image src="../../images/news.png" class="alarmclock"></image></view>
                 </view>

@@ -17,7 +17,8 @@
       
        "pages/thing/index",
        "pages/switchcity/switchcity",
-       "pages/find/index"
+       "pages/find/index",
+       "pages/hot/hot"
      
       
      
